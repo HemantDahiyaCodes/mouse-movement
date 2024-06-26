@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click me</button>
+    <p></p>
+    <script>
+        const button = document.querySelector("#btn");
+        button.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        });
+
+        button.addEventListener("mouseup", (event) => {
+            let message = document.querySelector("p");
+
+            switch (event.button) {
+                case 0:
+                    message.textContent = "Left button was clicked!";
+                    break;
+                
+                case 1:
+                    message.textContent = "Middle button was clicked";
+                    break;
+
+                case 2:
+                    message.textContent = "right button was clicked!";
+            }
+                
+        });
+    </script>
+</body>
+</html>
